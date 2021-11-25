@@ -28,6 +28,11 @@ namespace prjXISD_Lib_Framework
 
             answer += num.ToString();
 
+            if (this.List().Where(x => x.ordNum == answer).FirstOrDefault() != null)
+            {
+                return OrderNumGen(name);
+            }
+
             return answer;
         }
 
@@ -92,7 +97,7 @@ namespace prjXISD_Lib_Framework
 
             return O_List;
         }
-        
+
         //Get a list of orders for a specific customer id
         public List<Order> List(string id)
         {
