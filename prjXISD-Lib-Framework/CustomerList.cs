@@ -58,6 +58,20 @@ namespace prjXISD_Lib_Framework
             conn.Close();
         }
 
+        //Delete Module based on Module Code
+        public void DeleteCustomer(Customer C)
+        {
+            conn.Open();
+            using (SqlCommand command = new SqlCommand(
+                "DELETE " +
+                "FROM tblCustomers " +
+                $"WHERE custID={C.custID}", conn))
+            {
+                command.ExecuteNonQuery();
+            }
+            conn.Close();
+        }
+
         //Get latest List of Customers
         public List<Customer> List()
         {
