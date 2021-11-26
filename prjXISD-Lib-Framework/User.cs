@@ -24,9 +24,9 @@ namespace prjXISD_Lib_Framework
         #endregion
 
         #region Getters and Setters
-        public string Username { get => username; private set => username = value; }
-        public string Password { get => password; private set => password = value; }
-        public string EmpNum { get => empNum; private set => empNum = value; }
+        public string Username { get => username; set => username = value; }
+        private string Password { get => password; set => password = value; }
+        public string EmpNum { get => empNum; set => empNum = value; }
         private string EncPassword { get => encPassword; set => encPassword = value; }
         #endregion
 
@@ -37,6 +37,12 @@ namespace prjXISD_Lib_Framework
             this.Username = u_name;
             this.Password = p_word;
             this.EmpNum = e_num;
+        }
+
+        //Construtor without Values
+        public User()
+        {
+
         }
         #endregion
 
