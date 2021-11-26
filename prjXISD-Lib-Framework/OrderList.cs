@@ -18,6 +18,29 @@ namespace prjXISD_Lib_Framework
 
         }
 
+        //Update Order based on existing Order's 10-digit Number
+        public void UpdateOrder(Order O)
+        {
+            SqlCommand command = new SqlCommand(
+                $"UPDATE tblOrders " +
+                $"SET ordCargo = @ordCargo, ordQuantity = @ordQuantity, toDepot = @toDepot, fromDepot = @fromDepot, ordStatus = @ordStatus " +
+                $"WHERE ordNum = '{O.ordNum}'", conn);
+
+            command.Parameters.AddWithValue("@ordCargo", O.ordCargo);
+            command.Parameters.AddWithValue("@ordQuantity", O.ordQuantity);
+            command.Parameters.AddWithValue("@toDepot", O.toDepot);
+            command.Parameters.AddWithValue("@fromDepot", O.fromDepot);
+            command.Parameters.AddWithValue("@ordStatus", O.ordStatus);
+            conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+            adapter.Dispose();
+
+            conn.Close();
+        }
+
         public string OrderNumGen(string name)
         {
             string answer = "";
