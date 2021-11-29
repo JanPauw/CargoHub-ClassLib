@@ -27,7 +27,7 @@ namespace prjXISD_Lib_Framework
         public string Username { get => username; set => username = value; }
         private string Password { get => password; set => password = value; }
         public string EmpNum { get => empNum; set => empNum = value; }
-        private string EncPassword { get => encPassword; set => encPassword = value; }
+        public string EncPassword { get => e.EncryptString(this.Password); private set => encPassword = value; }
         #endregion
 
         #region Constructors
@@ -326,5 +326,28 @@ namespace prjXISD_Lib_Framework
             return false;
         }
         #endregion
+
+        //Change User Password
+        public void ChangePass(string OldPass, string NewPass)
+        {
+            string OldEnc = e.EncryptString(OldPass);
+            string NewEnc = e.EncryptString(NewPass);
+
+            conn.Open();
+
+            SqlCommand command = new SqlCommand(
+                "UPDATE tblUsers " +
+                $"SET Password = '{NewEnc}' " +
+                $"WHERE Username = '{this.Username}' " +
+                $"AND Password = '{OldEnc}' " +
+                $"AND empNum ='{this.empNum}' ;", conn);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+            adapter.Dispose();
+
+            conn.Close();
+        }
     }
 }

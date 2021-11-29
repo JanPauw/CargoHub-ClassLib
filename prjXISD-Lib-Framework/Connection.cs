@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace prjXISD_Lib_Framework
 {
-    class Connection
+    public class Connection
     {
         private string cs = null;
         public SqlConnection conn;

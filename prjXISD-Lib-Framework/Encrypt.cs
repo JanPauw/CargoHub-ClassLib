@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace prjXISD_Lib_Framework
 {
-    class Encrypt
+    public class Encrypt
     {
         private string key = "eSgVkYp3s6v9y$B&E)H@McQfTjWmZq4t";
 

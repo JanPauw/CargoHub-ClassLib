@@ -17,6 +17,7 @@ namespace prjXISD_Lib_Framework
         public string custID { get; set; }
         public DateTime? ordDate { get; set; }
         public string ordStatus { get; set; }
+        public string empNum { get; set; }
 
         public Order()
         {
