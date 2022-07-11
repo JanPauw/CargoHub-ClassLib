@@ -1,4 +1,5 @@
-CREATE DATABASE DevHub
+CREATE DATABASE CargoHub
+
 
 create table [tblEmployees]
 (
@@ -99,10 +100,10 @@ create table [tblUsers]
  CREATE TABLE tblInvoice
  (
     [invNum] int IDENTITY (1,1) NOT NULL,
-    [ordNum] int,
+    [ordNum] VARCHAR(10),
 
     PRIMARY KEY (invNum),
-    FOREIGN KEY (ordNum) REFERENCES tblOrder(ordID),
+    FOREIGN KEY (ordNum) REFERENCES tblOrders(ordNum),
  );
 
   CREATE TABLE tblTrip
@@ -119,14 +120,13 @@ create table [tblUsers]
   CREATE TABLE tblDelivery
  (
     [deliveryID] int IDENTITY (1,1) NOT NULL,
-    [vehID] int,
-    [ordNum] int,
+    [vehRegNum] VARCHAR(10),
+    [ordNum] VARCHAR(10),
     [tripID] int,
 
     PRIMARY KEY (deliveryID),
-    FOREIGN KEY (vehID) REFERENCES tblVehicles(vehID),
-    FOREIGN KEY (ordNum) REFERENCES tblOrder(ordID),
-    FOREIGN KEY (tripID) REFERENCES tblTrip(tripID),
+    FOREIGN KEY (vehRegNum) REFERENCES tblVehicles(vehRegNum),
+    FOREIGN KEY (ordNum) REFERENCES tblOrders(ordNum)
  );
 
   CREATE TABLE tblDepot
