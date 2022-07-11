@@ -8,7 +8,7 @@ This is the Class Library for the DevHub ASP.NET Application. (Located: https://
 </ul>
 
 <h2>Getting Started!</h2>
-<h3>Creating the Database</h3>
+<h3>1. Creating the Database</h3>
 <ol>
   <li>Download/Copy the creation script from the file: 
     <a href='https://github.com/JanPauw/DevHub-ClassLib/blob/master/CargoHub-Creation-Script.sql'>HERE</a>
@@ -16,7 +16,7 @@ This is the Class Library for the DevHub ASP.NET Application. (Located: https://
   <li>Using your Query Editor, you should be able to just run this script to get your Database/Tables in order</li>
 </ol>
 
-<h3>Changing your Connection String</h3>
+<h3>2. Changing your Connection String</h3>
 <ol>
 <li>Get your Connection String from your newly created database.</li>
 <li>Open the "Connection.cs" file.</li>
