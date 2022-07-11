@@ -22,4 +22,6 @@ This is the Class Library for the DevHub ASP.NET Application. (Located: https://
 <li>Open the "Connection.cs" file.</li>
 <li>Change the Value of "YOUR_CONN_STRING" to your own new connection string.</li>
 </ol>
+<img src="https://files.attilan.co.za/api/public/dl/GLcIWGvk" height="250" width="500" />
+
 
