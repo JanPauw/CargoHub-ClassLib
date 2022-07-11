@@ -1,4 +1,4 @@
-# DevHub-ClassLib
+# CargoHub Class Library
 This is the Class Library for the DevHub ASP.NET Application. (Located: https://github.com/JanPauw/DevHub-ASP)
 
 <h3>Pre-requisites:</h3>
