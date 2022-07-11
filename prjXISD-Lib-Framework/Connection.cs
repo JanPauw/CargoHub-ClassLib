@@ -14,7 +14,7 @@ namespace prjXISD_Lib_Framework
 
         public Connection()
         {
-            cs = @"Server=tcp:devhub.database.windows.net,1433;Initial Catalog=cargohub;Persist Security Info=False;User ID=devhub;Password=,,PassnowSQL1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            cs = @"YOUR_CONN_STRING";
             conn = new SqlConnection(cs);
         }
     }
